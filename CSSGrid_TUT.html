@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS GRID</title>
+
+<!--Styling-->
+<style>
+/**Column_grid_Property**/
+.container
+{
+    display: grid;
+    grid-template-columns: 22% 42% 32%;
+    /**Grid gap is use to make spaces between grids**/
+    grid-gap: 10px;  
+    /**Instead of Grid-gap we can also use ------> Row-gap and Column-gap  ------- Properties in parent container .**/
+}
+.items
+{
+    border:2px solid rgb(178, 178, 249);
+    background-color: rgb(252, 193, 202);
+    height:25px;
+    border-radius: 5px;
+    margin:2px;
+    padding:0 10px;
+    overflow-x: auto;
+}
+
+/**Column_grid_Property_fractional_val**/
+.container1
+{
+    display: grid;
+        /**Grid gap is use to make spaces between grids**/
+
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    
+    /**auto make possible no of col with 200px width**/ 
+
+    /**We can also give col size as 1---> repeat(4,1f) for 4 equal column and 
+    2--> 2fr 1fr 1fr divide the screen sixe in the size of defined columns.**/
+
+    grid-gap: 20px;
+    grid-auto-rows: minmax(30px,100px);/**Here 30px is the minimum height of col 
+    amd maximum is 100px after that overflow will work**/
+}
+.items1
+{
+    border:2px solid rgb(245, 124, 130);
+    background-color: rgb(216, 193, 252);
+    border-radius: 5px;
+    margin:2px;
+    padding:10px;
+    text-align: justify;
+   overflow-y: auto;
+}
+
+/**Row_grid_Property**/
+.container2
+{
+    display: grid;
+    grid-template-rows: 60px 45px 40px 35px 30px;
+    /**Grid gap is use to make spaces between grids**/
+    grid-gap: 20px;
+}
+.items2
+{
+    border:2px solid rgb(80, 247, 127);
+    background-color: rgb(193, 252, 214);
+    border-radius: 5px;
+    margin:2px;
+    padding:0 10px;
+}
+
+ /**HEADINGS**/
+
+h2{
+    background-color:black;
+    color:white;
+    text-align: center;
+    height:50px;
+    width: auto;
+    transition: 1s;
+}
+h2:hover{
+    color: rgb(112, 15, 15);
+    font-size: 3em;
+    font-weight: bolder;
+    height: 80px;
+    background-image: linear-gradient(to bottom,black,grey,lightgrey,lightpink,powderblue,rgb(141, 134, 250));
+}
+@media screen and (max-width:600px)
+{
+    .items  
+   {
+    background-color:black; 
+    color: aqua;
+   }
+   .items1
+   {
+    background-color:black;
+    color: aqua; 
+   }
+   .items2 
+   {
+    background-color:black; 
+    color: aqua;
+   }
+   body{background-color: black;}
+   h2:hover
+   {
+    color: rgb(134, 18, 18);
+    font-size: 3em;
+    font-weight: bolder;
+    height: 160px;
+    background-image: linear-gradient(to bottom,black,grey,lightgrey,lightpink,powderblue,rgb(141, 134, 250));
+   }
+}
+/**positionin and stretching of item in grid**/
+
+#box4
+{
+    grid-column-start: 2;
+    grid-column-end: 3; 
+}
+
+#box5
+{
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+#box1
+{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+#box1 img {
+    float:left;
+    margin:5px 15px 7px 5px;
+}
+
+</style>
+
+
+</head>
+
+<body>
+    <h2>Column Grid</h2>
+    <!--Column_grid**-->
+    <div class="container">
+ <Div class="items">Dabba_1</Div>
+ <Div class="items">Dabba_2</Div>
+ <Div class="items">Dabba_3</Div>
+ <Div class="items">Dabba_4</Div>
+ <Div class="items">Dabba_5</Div>
+    </div>
+
+    <h2>Column Grid (fractional width)</h2>
+    <!--Column_grid_with fractional val**-->
+    <div class="container1">
+<Div class="items1" id="box1"><image src="D:\Aman\Docs\Image\13.jpg" alt="Img not found" width="100px"></image>Dabba_1............... Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit illum officia animi dignissimos temporibus amet, veniam repellat vero commodi eos voluptatem iusto tempora quae? Ad doloribus, excepturi tempore autem natus voluptatem neque, illo nobis iste similique iure quod hic mollitia dignissimos a perferendis vel quia facilis cupiditate officiis voluptatibus. Incidunt consectetur cupiditate inventore et vel in officia eius vitae obcaecati atque quis quibusdam aperiam accusantium unde maiores dolores sequi suscipit nam adipisci dolore, quos earum error laudantium. Praesentium molestiae, aliquam architecto iste ipsa nostrum facere fuga cupiditate illo autem distinctio provident veritatis necessitatibus neque impedit non. Fuga, quidem veniam laborum odit totam dolor deserunt culpa nostrum veritatis rem eius earum. Ea commodi rerum sunt nobis, enim molestias in a perferendis!</Div>
+<Div class="items1" id="box2">Dabba_2............... Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, illum.</Div>
+<Div class="items1" id="box3">Dabba_3</Div>
+<Div class="items1" id="box4">Dabba_4</Div>
+<Div class="items1" id="box5">Dabba_5</Div>
+    </div>
+
+     <!--Row_griding**--><br>
+     <h2>Row Grid</h2>
+    <div class="container2">
+        <Div class="items2">Dabba_1</Div>
+        <Div class="items2">Dabba_2</Div>
+        <Div class="items2">Dabba_3</Div>
+        <Div class="items2">Dabba_4</Div>
+        <Div class="items2">Dabba_5</Div>
+    </div>
+
+    
+</body>
+</html>
